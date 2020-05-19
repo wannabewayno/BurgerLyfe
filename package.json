@@ -4,7 +4,8 @@
   "description": "sql linked burger dashboard",
   "main": "server.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "npx seqeulize-cli db:migrations && npx sequelize-cli db:seed:all"
   },
   "repository": {
     "type": "git",
