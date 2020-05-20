@@ -1,15 +1,44 @@
-{{!-- need a banner --}}
-<h1>THIS IS A TITLE</h1>
 
-<div>
-{{#each burger}}
+<div class='container'>
+    <h1 class="title z-depth-1">Burger Lyfe</h1>
+    
+    {{!-- materialize grid  --}}
+    <div class='row'>
+        {{!-- column undevoured --}}
+        <div class="col s6">
+            <ul>
+                {{#each burger}}
+                {{!-- need a container to hold everything FLEX BOX make that the list item--}}
+                {{!-- need a delete button --}}
+                {{!-- need a way to colour each stack --}}
+                {{!-- each stack will have coloured div for a burger bun yummm --}}
+                    <li> {{this.name}} </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{!-- column devoured --}}
+        <div class="col s6">
+            <ul>
+                {{#each burger}}
+                    <li> {{this.name}} </li>
+                {{/each}}
+            </ul>
+        <div>
+    </div>
     
 
-{{/each}}
+    <form action='post'>
+        {{!-- need to go back and look at how to structure these forms to work --}}
+        <div class="inline">
+            <div class='input-field'>
+                <input type='text' id='add_burger'>
+                <label for='add_burger'>Add burger</label>
+            </div>
+            <button type='submit' class="burger-button">🍔</button>
+        </div>
+    </form>
 
 </div>
 
-{{!-- will discuss this at some point down the line --}}
 
-{{!-- FORM GOES HERE --}}
 

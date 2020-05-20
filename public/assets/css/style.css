@@ -1,0 +1,27 @@
+/* font-family: 'Bungee Shade', cursive; */
+
+body{
+    background-color: #0080FF;
+}
+
+.title{
+    background-color: hsl(210,100%,55%);
+    border-radius: 0.5rem;
+    padding:0.5rem;
+    width:fit-content;
+    text-align: center;
+    margin: 2rem auto;
+    font-family:'Bungee Shade', cursive;
+    color: rgba(0,0,0,1);
+}
+
+/* will align inline classes next to each other */
+.inline {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items:center;
+    width:100%
+}
+
+
