@@ -7,48 +7,44 @@ module.exports = app => {
         db.Burgers.findAll()
         .then(results => {
             console.log(results);
-            res.json(results)})
+            res.json(results)
+        })
+        .catch(error => res.status(500).console.log(error))
     });
 
-    //TODO POST route for adding a burger
-    //add front end spec for this
+    app.post("/api/burgers", (req, res) => {
+        const { name } = req.body
 
-    // app.post("/api/todos", (req, res) => {
-    //     const { name } = req.body
-    //     db.Burgers.create({
-    //     name:name
-    //     }).then(results => res);
-    //     res.redirect('/');
-    // });
+        db.Burgers.create({
+            name:name
+        }).then(results => {
+            res.status(200).json(results);
+        })
+        .catch(error => {
+            res.status(500).json(error).end()
+        })
+    });
 
-    //TODO DELETE route for deleting burgers
-    //Add front end spec for this
-
-    // app.delete("/api/todos/:id", function(req, res) {
-    //     db.Todo.destroy({
+ 
+    // app.delete("/api/burgers/:id", (req, res) => {
+    //     db.Burgers.destroy({
     //         where:{ id:req.params.id }
     //     })
-    //     .then(response => res.json(response))
-    //     res.redirect('/');
+    //     .then(response => {
+    //         res.json(response)
+    //         res.redirect('/');
+    //     })
+    //     .catch(error => res.status(500).console.log(error))
     // });
 
-    //TODO Update devour field our burger
-    //add front end spec for this
+    app.put("/api/burgers", (req, res) => {
+        console.log(req.body);
+        const { id } = req.body
 
-    // app.put("/api/todos", function(req, res) {
-    //     console.log(req.body);
-    //     const { text, complete, id, createdAt, updatedAt} = req.body
-    //     db.Todo.update(
-    //     {
-    //         text:text,
-    //         complete:complete,
-    //         createdAt:createdAt,
-    //         updatedAt:updatedAt
-    //     },
-    //     {
-    //         where:{ id:id }
-    //     }
-    //     ).then(response => res.json(response))
-    //     res.redirect('back');
-    // });
+        db.Burgers.update(
+        { devoured:true },
+        { where:{ id:id } }
+        ).then(response => res.json(response))
+        res.redirect('/');
+    });
 }
