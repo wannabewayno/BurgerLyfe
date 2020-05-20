@@ -19,8 +19,9 @@ $(function() {
     });
 
     $(".delete-button").on("click", event => {
-
-        const id = $(event).attr('data');
+        $(event).stopPropagation
+        
+        const id = $(event.currentTarget).parent('.burger-wrapper').data('id')
 
         $.ajax(`/api/burgers/${id}`, {
                 type: "DELETE"

@@ -1,7 +1,8 @@
 
 <div class='container'>
     <h1 class="title z-depth-1">Burger Lyfe</h1>
-    
+
+    {{!-- add burger form --}}
     <form action='post' id='add-burger-form'>
         <div class="inline">
 
@@ -15,38 +16,47 @@
     </form>
 
     {{!-- materialize grid  --}}
-    <div class="row">
-        <div class='row'>
-            {{!-- column undevoured --}}
-            <div class="col s6">
-                <ul>
-                    {{#each this.notDevoured}}
-                        <li class="burger-wrapper" data-id="{{this.id}}">
-                            <div class="bun top"></div>
-                            {{#each this.name}}
-                                <div class="filling">{{word}}</div>
-                            {{/each}} 
-                            <div class="bun bottom"></div>
-                        </li>
-                    {{/each}}
-                </ul>
-            </div>
-            {{!-- column devoured --}}
-            <div class="col s6">
-                 <ul>
-                    {{#each this.devoured}}
-                        <li class="burger-wrapper devoured">
-                            <div class="bun top devoured"></div>
-                            {{#each this.name}}
-                                <div class="filling devoured">{{word}}</div>
-                            {{/each}} 
-                            <div class="bun bottom devoured"></div>
-                        </li>
-                    {{/each}}
-                </ul>
-            <div>
+    <div class='row'>
+        {{!-- column undevoured --}}
+        <div class="col s6">
+            <ul>
+                {{#each this.notDevoured}}
+                    <li class="burger-wrapper" data-id="{{this.id}}">
 
+                        <button class='btn-flat delete-button'>
+                            <i class='tiny material-icons'>close</i>
+                        </button>
+
+                        <div class="bun top"></div>
+                        {{#each this.name}}
+                            <div class="filling">{{word}}</div>
+                        {{/each}} 
+                        <div class="bun bottom"></div>
+
+                    </li>
+                {{/each}}
+            </ul>
         </div>
+        {{!-- column devoured --}}
+        <div class="col s6">
+                <ul>
+                {{#each this.devoured}}
+                    <li class="burger-wrapper devoured" data-id="{{this.id}}">
+
+                        <button class='btn-flat delete-button'>
+                            <i class='tiny material-icons'>close</i>
+                        </button>
+
+                        <div class="bun top devoured"></div>
+                        {{#each this.name}}
+                            <div class="filling devoured">{{word}}</div>
+                        {{/each}} 
+                        <div class="bun bottom devoured"></div>
+
+                    </li>
+                {{/each}}
+            </ul>
+        <div>
 
     </div>
 
