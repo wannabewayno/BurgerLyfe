@@ -4,22 +4,15 @@ module.exports = (sequelize, DataTypes) => {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      validate:{
+        len:[1]
+      }
     },
     devoured: {
       type:DataTypes.BOOLEAN,
       allowNull: false,
       defaultValue: false,
     },
-    // createdAt: {
-    //   allowNull: false,
-    //   type: 'TIMESTAMP',
-    //   defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
-    // },
-    // updatedAt: {
-    //   allowNull: false,
-    //   type: 'TIMESTAMP',
-    //   defaultValue: sequelize.literal('CURRENT_TIMESTAMP')
-    // }
   });
   
   return Burgers;

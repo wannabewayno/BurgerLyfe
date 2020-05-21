@@ -1,5 +1,7 @@
 $(function() {
-
+    
+    setFillings();
+    devoured();
     
     $("#add-burger-form").on("submit", event => {
         // Make sure to preventDefault on a submit event.
@@ -11,16 +13,17 @@ $(function() {
                 type: "POST",
                 data:  { name }, 
         })
-        .then(() => {
+        .then( () => {
             console.log("Added a burger!");
             // Reload the page to get the updated list
             location.reload();
-        });
+        })
+        .catch( () => res.json(error) );
     });
 
     $(".delete-button").on("click", event => {
         $(event).stopPropagation
-        
+
         const id = $(event.currentTarget).parent('.burger-wrapper').data('id')
 
         $.ajax(`/api/burgers/${id}`, {
