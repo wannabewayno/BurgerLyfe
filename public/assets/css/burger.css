@@ -50,3 +50,17 @@
     background-color: #975324;
     border-radius: 5px;
 }
+
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    :root{
+        --bun-width:15vh;
+    }
+    .filling {
+        font-size: 0.8rem;
+        height:1.3rem
+    }
+}
