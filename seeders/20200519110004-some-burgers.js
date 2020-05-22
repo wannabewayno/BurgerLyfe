@@ -7,10 +7,8 @@ module.exports = {
       { name: 'Curry Burger',  },
       { name: 'Cheese Burger', },
       { name: 'Buffalo Fried Chicken Burger',  },
-      { name: 'Ranch Burger',  },
-      { name: 'Pumpkin Ravioli Burger',  }
+      { name: 'Bacon lettuce tomato',  }
     ]);
-    
   },
 
   down: (queryInterface, Sequelize) => {
