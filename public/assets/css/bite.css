@@ -5,6 +5,7 @@
     transform: rotateZ(-45deg);
     top:-1rem;
     left:1rem;
+    z-index: 200;
 }
 
 .biteMark {
