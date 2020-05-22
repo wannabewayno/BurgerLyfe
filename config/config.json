@@ -5,9 +5,6 @@
     "database": "burger_db_development",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "seederStorage": "json",
-    "seederStoragePath": "./db/burgerData.json",
-    "seederStorageTableName": "burger_data"
   },
   "test": {
     "username": "root",
